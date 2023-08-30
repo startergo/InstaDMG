@@ -79,16 +79,15 @@ The particularly useful thing about learning how to take advantage of an answer 
 Beneﬁts Out-Of-The-Box, and Added On
 In an effort to make builds happen faster on subsequent runs, the base image(after in- stallerChoices are evaluated) gets cached in ```./instadmg/Caches/BaseOS```. ```InstaDMG``` will then look there from that point on, and subsequent runs skip that initial install step “for free”.
 
-If you haven’t already, you should look into DeployStudio, PSU Blast Image Conﬁg, or even just asr at the command line to restore your image. The usual warnings apply, this will wipe a disk clean before laying down your image - although all these tools are free, caveat emptor. You’ll notice the restore process can be as fast as 3 minutes for a lean (< 6GB) image. Here’s a one-liner for asr to get you going:
+If you haven’t already, you should look into ```DeployStudio```, ```PSU Blast Image Conﬁg```, or even just ```asr``` at the command line to restore your image. The usual warnings apply, this will wipe a disk clean before laying down your image - although all these tools are free, caveat emptor. You’ll notice the restore process can be as fast as 3 minutes for a lean (< 6GB) image. Here’s a one-liner for ```asr``` to get you going:
 ```
-sudo asr restore --source ./instadmg/OutputFiles/11-11-01.dmg --target /Volumes/ Destination --erase --verbose --noprompt --noverify --buffers 1 --buffersize 32m
---puppetstrings
+sudo asr restore --source ./instadmg/OutputFiles/11-11-01.dmg --target /Volumes/ Destination --erase --verbose --noprompt --noverify --buffers 1 --buffersize 32m --puppetstrings
 ```
 
 Added-on shiny bits:
-Included in the AddOns directory is a createUser package, which enables you to place a fresh, never logged in user account on the image. Almost everything you’d specify in System Preferences -> Accounts when creating a new user can be customized here, and a tool to use which can generate an obscured password. This goes hand-in-hand with a very spare pack- age that can be obtained from ```afp548.com’s``` MyDownloads section, called ```clearReg```. This tricks the setup assistant to believe it has already run, along with the prompt for registration.
+Included in the ```AddOns``` directory is a ```createUser``` package, which enables you to place a fresh, never logged in user account on the image. Almost everything you’d specify in System Preferences -> Accounts when creating a new user can be customized here, and a tool to use which can generate an obscured password. This goes hand-in-hand with a very spare pack- age that can be obtained from ```afp548.com’s``` MyDownloads section, called ```clearReg```. This tricks the setup assistant to believe it has already run, along with the prompt for registration.
 
-Revisiting ```InstaUp2Date```, we’ll touch on another helper ﬁle, checksum.py. This allows us to refer to custom pkgs we’d like to add in catalog ﬁles in the correct format (its output should be formatted with tabs exactly as required). Every time the ‘ﬁngerprint’ or makeup of your package changes you will need to re-run this against your pkg and then update your cata- log ﬁle accordingly. This is achieved with the following:
+Revisiting ```InstaUp2Date```, we’ll touch on another helper ﬁle, ```checksum.py```. This allows us to refer to custom pkgs we’d like to add in catalog ﬁles in the correct format (its output should be formatted with tabs exactly as required). Every time the ‘ﬁngerprint’ or makeup of your package changes you will need to re-run this against your pkg and then update your cata- log ﬁle accordingly. This is achieved with the following:
 ```
 /instadmg/AddOns/InstaUp2Date/checksum.py $PATH_TO_PKG
 ```
@@ -100,11 +99,9 @@ If getting your software to play well with ```InstaDMG``` (or deployment in gene
 How to rev the engine
 Once we’ve got the workﬂow down, it’s all about optimization. Disk image creation is a heavy I/O process, so CPU and RAM don’t play as much of a factor (although only having 1GB RAM is painful in general). There is one step in the process that can be skipped, and other helpful ﬂags I’ll demonstrate below:
 ```
-sudo ./instadmg/instadmg.bash -f -t /Volumes/stripedRAID0 -o /Volumes/stripedRAID0
--m Dev_10-6-5 -n Restored
+sudo ./instadmg/instadmg.bash -f -t /Volumes/stripedRAID0 -o /Volumes/stripedRAID0 -m Dev_10-6-5 -n Restored
 ```
-F denotes “non-paranoid mode”, which will therefore skip the veriﬁcation of image checksums. The subsequent ﬂags have the effect of multiplying the ‘spindles’ doing the work; our ```InstaDMG``` directory structure can be housed on a separate disk for the sole purpose of reading the packages(these days that would be a SSD with its superior sequential reads nearly saturating the SATA bus) and another location designated by the T ﬂag(in this example a
-RAID0 volume), is utilized for both writing the intermediate image into its root directory(instead of the default /tmp of your currently booted volume), and putting the ﬁnal asr-ready output(```-o```, instead of ```./instadmg/OutputFiles/```).
+```F``` denotes “non-paranoid mode”, which will therefore skip the veriﬁcation of image checksums. The subsequent ﬂags have the effect of multiplying the ‘spindles’ doing the work; our ```InstaDMG``` directory structure can be housed on a separate disk for the sole purpose of reading the packages(these days that would be a SSD with its superior sequential reads nearly saturating the SATA bus) and another location designated by the T ﬂag(in this example a RAID0 volume), is utilized for both writing the intermediate image into its root directory(instead of the default ```/tmp``` of your currently booted volume), and putting the ﬁnal asr-ready output(```-o```, instead of ```./instadmg/OutputFiles/```).
 The ```M``` and ```N``` ﬂags are convenient ways to help you tell your images apart by setting what you want the resulting asr image to be named, both before restoration(```-m```, which would result in ```Dev_10-6-5.dmg``` instead of the default naming“11-11-1.dmg” for November 1st, 2011) and after(```-n```, so the resulting partition name would be ```Restored``` instead of the default ```InstaDMG```.)
 
 These are scripts you can open and look at, so feel free to read through all the options, or pass the ```--help``` ﬂag to it. And please post on the forum at ```afp548.com``` with questions!
