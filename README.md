@@ -77,7 +77,7 @@ the case of the retail OS install itself. Following the instructions in that for
 The particularly useful thing about learning how to take advantage of an answer ﬁle is that you can use the same process for other mpkg’s, like Ofﬁce2008 and iLife 09, and then add the xml to the folder with the installer(this is all site licensed software we’re working with, of course.) Use the installer GUI as your guide, and give yourself a little background by looking at the full choicesXML for context, just in case the naming of the choices aren’t clear.
 
 Beneﬁts Out-Of-The-Box, and Added On
-In an effort to make builds happen faster on subsequent runs, the base image(after in- stallerChoices are evaluated) gets cached in ```./instadmg/Caches/BaseOS```. InstaDMG will then look there from that point on, and subsequent runs skip that initial install step “for free”.
+In an effort to make builds happen faster on subsequent runs, the base image(after in- stallerChoices are evaluated) gets cached in ```./instadmg/Caches/BaseOS```. ```InstaDMG``` will then look there from that point on, and subsequent runs skip that initial install step “for free”.
 
 If you haven’t already, you should look into DeployStudio, PSU Blast Image Conﬁg, or even just asr at the command line to restore your image. The usual warnings apply, this will wipe a disk clean before laying down your image - although all these tools are free, caveat emptor. You’ll notice the restore process can be as fast as 3 minutes for a lean (< 6GB) image. Here’s a one-liner for asr to get you going:
 ```
