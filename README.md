@@ -32,9 +32,9 @@ Before we move forward, let’s walk through the quickstart InstaDMG usage scena
 
 Ride the Bullet Build Train
 ```
-svn checkout http://instadmg.googlecode.com/svn/trunk instadmg
+git clone  https://github.com/startergo/InstaDMG.git instadmg
 ```
-This uses svn, which is built into every mac. It pulls down the most recent version of the instadmg project into a newly-created folder called “instadmg” - it ﬁnishes in a matter of sec- onds (similar to Figure A, above), producing many lines of output and creating a very speciﬁc directory structure (Figure B, below) in your home folder.
+This uses git. It pulls down the most recent version of the instadmg project into a newly-created folder called “instadmg” - it ﬁnishes in a matter of sec- onds (similar to Figure A, above), producing many lines of output and creating a very speciﬁc directory structure (Figure B, below) in your home folder.
 ```
 sudo ./instadmg/AddOns/InstaUp2Date/importDisk.py --automatic --legacy
 ```
