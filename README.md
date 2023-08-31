@@ -20,6 +20,35 @@ sudo ./instadmg/AddOns/InstaUp2Date/instaUp2Date.py 10.6_vanilla --process
 
 Collect a fully patched,```10.6.8 Vanilla.dmg```, in ```./instadmg/OutputFiles```
 Of course, there’s much more to it than that!
+If you already have the image of the SL Retail version DVD labeled ```Mac OS X Install DVD.dmg``` you can create these empty folders:
+```
+~/instadmg/InstallerFiles/CustomPKG
+~/instadmg/InstallerFiles/BaseUpdates
+~/instadmg/InstallerFiles/InstaUp2DatePackages
+~/instadmg/InstallerFiles/InstallerDisks
+```
+ And you can place the ```Mac OS X Install DVD.dmg``` inside ```~/instadmg/InstallerFiles/InstallerDisks/Mac OS X Install DVD.dmg```
+ You can then use the command:
+ ```
+sudo python ~/instadmg/AddOns/InstaUp2Date/instaUp2Date.py ~/instadmg/AddOns/InstaUp2Date/CatalogFiles/10.6_vanilla.catalog
+```
+To start the automated patching. If any of the update links are outdated and come with a certificate error (or can't find file) You can manually search Apple downloads for that package and download it. For instance SL Vanilla Catalog fails on this file:
+```
+Safari 5.1.9 for Snow Leopard	http://support.apple.com/downloads/DL1569/en_US/Safari5.1.9SnowLeopard.dmg	sha1:d59f7180ede53eeaed71ed04835ed4c1e75a9738
+```
+The replacement is ```Safari5.1.10SnowLeopardManual```. Once you downloaded you can run:
+```
+~/instadmg/AddOns/InstaUp2Date/checksum.py ~/Downloads/Safari5.1.10SnowLeopardManual.dmg
+```
+And you can copy the resulted line:
+```
+Safari5.1.10SnowLeopardManual	~/Downloads/Safari5.1.10SnowLeopardManual.dmg	sha1:12fb246fbcfb5eb55aefe553c0bc46e9f9440475
+```
+and replace this line in the Catalog file:
+```
+Safari 5.1.9 for Snow Leopard	http://support.apple.com/downloads/DL1569/en_US/Safari5.1.9SnowLeopard.dmg	sha1:d59f7180ede53eeaed71ed04835ed4c1e75a9738
+```
+
 Introduction - Where It Fits, What It Is
 When setting up many new computers at once or refreshing existing workstations, it is of the utmost importance to have a known baseline you can count on. Out of the desire to ‘slipstream’ (loosely speaking) updates, software, and/or other enhancements into a baseline image that is hardware independent, ```InstaDMG``` was born. It creates an image that can be customized through the addition of installer packages (which enables a ‘modular’ approach) with the deﬁning feature that the resulting image has never been booted.
 
