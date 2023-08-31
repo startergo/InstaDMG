@@ -36,7 +36,7 @@ To start the automated patching. If any of the update links are outdated and com
 ```
 Safari 5.1.9 for Snow Leopard	http://support.apple.com/downloads/DL1569/en_US/Safari5.1.9SnowLeopard.dmg	sha1:d59f7180ede53eeaed71ed04835ed4c1e75a9738
 ```
-The replacement is ```Safari5.1.10SnowLeopardManual```. Once you downloaded you can run:
+The replacement is ```Safari5.1.10SnowLeopardManual```. Once you downloaded it you can run:
 ```
 ~/instadmg/AddOns/InstaUp2Date/checksum.py ~/Downloads/Safari5.1.10SnowLeopardManual.dmg
 ```
