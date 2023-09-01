@@ -1,4 +1,4 @@
-#!/usr/bin/python
+/#!usr/bin/env python
 
 '''Return the data for a shadow-hash file suitable for use in MacOS X'''
 

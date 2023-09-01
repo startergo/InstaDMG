@@ -1,4 +1,4 @@
-#!/usr/bin/python
+/#!usr/bin/env python
 
 import os, re, time
 import hashlib, urlparse, urllib, urllib2

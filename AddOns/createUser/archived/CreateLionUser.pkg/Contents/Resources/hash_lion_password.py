@@ -1,4 +1,4 @@
-#!/usr/bin/python
+/#!usr/bin/env python
 #
 # Create 10.7 ShadowHashData for a user.
 # Written by Per Olofsson, per.olofsson@gu.se.
