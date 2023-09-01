@@ -20,19 +20,6 @@ sudo ./instadmg/AddOns/InstaUp2Date/instaUp2Date.py 10.6_vanilla --process
 
 Collect a fully patched,```10.6.8 Vanilla.dmg```, in ```./instadmg/OutputFiles```.
 Of course, there’s much more to it than that!
-If you already have the image of the SL Retail version DVD labeled ```Mac OS X Install DVD.dmg``` you can create these empty folders:
-```
-~/instadmg/InstallerFiles/CustomPKG
-~/instadmg/InstallerFiles/BaseUpdates
-~/instadmg/InstallerFiles/InstaUp2DatePackages
-~/instadmg/InstallerFiles/InstallerDisks
-```
- And you can place the ```Mac OS X Install DVD.dmg``` inside ```~/instadmg/InstallerFiles/InstallerDisks/Mac OS X Install DVD.dmg```
- You can then use the command:
- ```
-sudo python ~/instadmg/AddOns/InstaUp2Date/instaUp2Date.py ~/instadmg/AddOns/InstaUp2Date/CatalogFiles/10.6_vanilla.catalog
-```
-To start the automated patching. 
 
 Introduction - Where It Fits, What It Is
 When setting up many new computers at once or refreshing existing workstations, it is of the utmost importance to have a known baseline you can count on. Out of the desire to ‘slipstream’ (loosely speaking) updates, software, and/or other enhancements into a baseline image that is hardware independent, ```InstaDMG``` was born. It creates an image that can be customized through the addition of installer packages (which enables a ‘modular’ approach) with the deﬁning feature that the resulting image has never been booted.
