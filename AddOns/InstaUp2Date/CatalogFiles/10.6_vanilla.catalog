@@ -10,10 +10,9 @@ OS Updates:
 	iTunes 11.4 for OS X 10.6	https://updates.cdn-apple.com/2019/cert/041-84835-20191023-72BD791C-1BAC-4A65-B0F8-FC5971493E8A/iTunes.dmg	sha1:81ec641dddd296df72667cd7bc90631b599686e4
 	Safari5.1.10SnowLeopardManual	https://updates.cdn-apple.com/2019/cert/041-92724-20191011-05aea905-e251-497a-8432-c99b9ab9993c/Safari5.1.10SnowLeopardManual.dmg	sha1:12fb246fbcfb5eb55aefe553c0bc46e9f9440475
 	Java for Mac OS X 10.6 Update 17	https://updates.cdn-apple.com/2019/cert/041-90813-20191011-3137b1ba-3379-40e8-8d46-ce9032952939/JavaForMacOSX10.6.dmg	sha1:2a34f23cc03cf1c7580717cb614350da159e527d
-	Mac OS X 10.6.8 Update Combo v1.1	http://support.apple.com/downloads/DL1399/en_US/MacOSXUpdCombo10.6.8.dmg	sha1:ae7eb88debdbfeaf2be85068340fcedf813398f3
-	Apple Remote Desktop 3.5.3 Client	http://support.apple.com/downloads/DL1532/en_US/RemoteDesktopClient.dmg	sha1:2cdb4032c656d4c22a0a3c08e528b08a2577d604
-	Apple Software Installer Update 1.0	http://support.apple.com/downloads/DL1512/en_US/AppleSoftwareInstallerUpdate.dmg	sha1:9303bcecec2ce1bdbe36846bd254a5928ba66721
-	Security Update 2013-003 (Snow Leopard)	http://support.apple.com/downloads/DL1670/en_US/SecUpd2013-003.dmg	sha1:aafe88acddd188c3396a849893d731a85c537cfc
+	Mac OS X 10.6.8 Update Combo v1.1	https://updates.cdn-apple.com/2019/cert/041-98151-20191017-dd149ff4-aa3a-4b37-8737-f3741b94d9f9/MacOSXUpdCombo10.6.8.dmg	sha1:ae7eb88debdbfeaf2be85068340fcedf813398f3
+	Apple Software Installer Update 1.0	https://updates.cdn-apple.com/2019/cert/041-85237-20191017-a702f182-0f3c-4059-8231-6c84425568f3/AppleSoftwareInstallerUpdate.dmg	sha1:9303bcecec2ce1bdbe36846bd254a5928ba66721
+	Security Update 2013-003 (Snow Leopard)	https://updates.cdn-apple.com/2019/cert/041-87871-20191017-b4a1c916-c9f9-4163-a256-53e5e73e5970/SecUpd2011-003Snow.dmg	sha1:63a6d636c65983401136e0f5bfbe19f284b83e91
 	AirPort Utility 5.6.1 for Leopard-Snow Leopard	https://updates.cdn-apple.com/2019/cert/041-84864-20191017-e3f4b895-d8b7-45a0-8b96-305246bd3f0c/AirPortUtility.dmg	sha1:8f1fcc404ef8a3e0f22e0f141d7efdb2372a3df1
 	RemoteDesktopClient	https://updates.cdn-apple.com/2019/cert/041-91746-20191011-52631536-2d98-4051-9b45-8fb10d29d75b/RemoteDesktopClient.dmg	sha1:7521aff71c29be2e709fe525f75519bff785fc2b
 	Security Update 2013-004 (Snow Leopard)	https://updates.cdn-apple.com/2019/cert/041-91753-20191011-d7d48033-9455-4979-89fa-5004de91b471/SecUpd2013-004.dmg	sha1:49a549d8463cc87ddeeb1eced86ae731e151b69a
