@@ -1,4 +1,4 @@
-/#!usr/bin/env python
+#!/usr/bin/env python
 
 __version__ = 451 # hasn't changed since Lion's python version bump messed with paths, killing svn-based revision expansion. formerly: "$Revision$".split()[1]
 

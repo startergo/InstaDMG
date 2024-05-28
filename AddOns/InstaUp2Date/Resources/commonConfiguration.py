@@ -1,4 +1,4 @@
-/#!usr/bin/env python
+#!/usr/bin/env python
 
 '''A collection point for hard-coded values that need to be shared between modules'''
 

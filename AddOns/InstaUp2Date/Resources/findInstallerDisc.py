@@ -1,4 +1,4 @@
-/#!usr/bin/env python
+#!/usr/bin/env python
 
 '''Find the BaseOS to use based on path, version, or the default location'''
 
