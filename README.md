@@ -11,7 +11,7 @@ git clone  https://github.com/startergo/InstaDMG.git instadmg
 Insert a retail-box (important) OS 10.6 (or 10.6.3) installer disk
 Paste the following, entering your (admin) password when prompted:
 ```
-sudo ./instadmg/AddOns/InstaUp2Date/importDisk.py --automatic --legacy
+sudo ./Instadmg/AddOns/InstaUp2Date/importDisk.py --automatic --legacy
 ```
 Let it process for about 45 minutes, and ﬁnally:
 ```
