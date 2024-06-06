@@ -1,0 +1,30 @@
+# Generated: 2024-06-06
+# $Rev$ from $Date$
+
+# Installer Disc Builds:	10A432, 10B504, 10C540, 10D573, 10D575, 10F569
+
+Output Volume Name:	Macintosh HD
+Output File Name:	10.6_server
+
+OS Updates:
+	Migration Assistant Update for Snow Leopard http://swcdn.apple.com/content/downloads/45/10/041-88890-A_HH4I08BJ1T/an9fneah7529zx7k0zu4h293nlb3i9zfst/SnowLeoMigrationAssistant.pkg sha1:483f63f35b4304226951dde218c23d020abb85e3
+	Apple Software Installer Update http://swcdn.apple.com/content/downloads/47/09/041-88059-A_O267FIDOQ3/dksly6cxk8seuzpni2rui9mxcoyyeq8wlv/AppleSoftwareInstallerUpdate.pkg sha1:aca8d4172d2a9f04594456dfdeea6ce9cf1b70fa
+	Java for Mac OS X 10.6 Update 17 http://swcdn.apple.com/content/downloads/22/51/041-90789-A_MN0WY0B55D/neomuall16qnv716zkql9875ttsc7f0ejk/JavaForMacOSX10.6.pkg sha1:a86fff7bf2da2b5a865d53cac49c415bbdd036f2
+	JavaSecurity http://swcdn.apple.com/content/downloads/22/51/041-90789-A_MN0WY0B55D/neomuall16qnv716zkql9875ttsc7f0ejk/JavaSecurity.pkg sha1:3b8b0ed053657933d52497db091f57f85c7b24fb
+	CoreADI http://swcdn.apple.com/content/downloads/06/56/041-84834-A_5AYET2986Q/i6iksjbjjrg623jqw1el6xafpdvn9xmd3e/CoreADI.pkg sha1:7ea76e60f2af08ec0e02bc2f8ba0898dc0ee55a7
+	CoreFP http://swcdn.apple.com/content/downloads/06/56/041-84834-A_5AYET2986Q/i6iksjbjjrg623jqw1el6xafpdvn9xmd3e/CoreFP.pkg sha1:7940573617d267236febce03b3e633d09bc689a8
+	ITunesAccess http://swcdn.apple.com/content/downloads/06/56/041-84834-A_5AYET2986Q/i6iksjbjjrg623jqw1el6xafpdvn9xmd3e/iTunesAccess.pkg sha1:3665901de5bccb043ef59374ee25935dced2938c
+	ITunesX http://swcdn.apple.com/content/downloads/06/56/041-84834-A_5AYET2986Q/i6iksjbjjrg623jqw1el6xafpdvn9xmd3e/iTunesX.pkg sha1:33ada574fbbbe9ce3dfe564a156cb5a8f20f34b0
+	MobileDevice http://swcdn.apple.com/content/downloads/06/56/041-84834-A_5AYET2986Q/i6iksjbjjrg623jqw1el6xafpdvn9xmd3e/MobileDevice.pkg sha1:a62a1ffe23eccb07abef07ba342228276f8ade19
+	Security Update 2013-004 https://updates.cdn-apple.com/2019/cert/041-92646-20191011-a7eedbae-44a0-4989-9e7c-b9c5526901ea/SecUpdSrvr2013-004.dmg sha1:afa39c0e7a2701b283e2f311391a27609f2e7a8e
+	Safari 5.1.10 https://updates.cdn-apple.com/2019/cert/041-92724-20191011-05aea905-e251-497a-8432-c99b9ab9993c/Safari5.1.10SnowLeopardManual.dmg sha1:12fb246fbcfb5eb55aefe553c0bc46e9f9440475
+	Mac App Store Update for OS X Snow Leopard https://updates.cdn-apple.com/2019/cert/041-88415-20191011-445749fd-9a34-43f1-b99b-92ab414c915b/MacAppStoreUpdate.dmg sha1:c93d8ef32853445f40b2abd403a107ffe4ae763f	
+	iTunes Access 10.6.3 http://swcdn.apple.com/content/downloads/10/06/041-88055-A_0XDTF2FW5A/wxhqcpxiq7z3v1fabxbvrvvtq2pbbqkude/iTunesAccess.pkg sha1:e8315790d285020b5907186673b407af05e6eae4
+	CoreFP1 http://swcdn.apple.com/content/downloads/10/06/041-88055-A_0XDTF2FW5A/wxhqcpxiq7z3v1fabxbvrvvtq2pbbqkude/CoreFP1.pkg sha1:416bc092353af0b368c5e5139f3aa9b4376afbc3
+	CoreFP http://swcdn.apple.com/content/downloads/10/06/041-88055-A_0XDTF2FW5A/wxhqcpxiq7z3v1fabxbvrvvtq2pbbqkude/CoreFP.pkg sha1:31b41a3415872f4c9b89b2ee2ce75833a9bf9c53
+	AppleMobileDeviceSupport http://swcdn.apple.com/content/downloads/10/06/041-88055-A_0XDTF2FW5A/wxhqcpxiq7z3v1fabxbvrvvtq2pbbqkude/AppleMobileDeviceSupport.pkg sha1:b58580e3e495f49b379756e934c79ee95d9f0b98
+	iTunesX http://swcdn.apple.com/content/downloads/10/06/041-88055-A_0XDTF2FW5A/wxhqcpxiq7z3v1fabxbvrvvtq2pbbqkude/iTunesX.pkg sha1:4393c3c1e011827b6bddc3b9a1502519c8c92a28
+	iTunesLibrary http://swcdn.apple.com/content/downloads/10/06/041-88055-A_0XDTF2FW5A/wxhqcpxiq7z3v1fabxbvrvvtq2pbbqkude/iTunesLibrary.pkg sha1:9f91a3306f290ee2b5631747f0afc876d8386b70
+	Mac OS X Server Update Combined https://updates.cdn-apple.com/2019/cert/041-98180-20191017-1a520f12-49f8-49db-bc40-226812a8f78b/MacOSXServerUpdCombo10.6.8.dmg sha1:8d9d1cefe370ea9be6641d8c52280208abccc0b2
+	Remote Desktop Client Update 3.5.4 http://swcdn.apple.com/content/downloads/54/18/041-91738-A_MOM01DN0FP/yx1v5yz9u82hxdka1v2gds437gk362s58e/RemoteDesktopClient.pkg sha1:8def5a6d5fa31ee75eab28a9c4c9b8749361b9d7
+	AirPort Utility 5.6.1 http://swcdn.apple.com/content/downloads/30/14/041-84850-A_JMXR0OFDCV/touza9d6zsrqzky1182jmeb2b7l617w9ty/AirPortUtility.pkg sha1:7121e5d2888d2c1fd92d2b6a9db9ad5d51c62ad7
