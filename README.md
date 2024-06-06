@@ -18,7 +18,7 @@ Let it process for about 45 minutes, and ﬁnally:
 sudo ./Instadmg/AddOns/InstaUp2Date/instaUp2Date.py 10.6_vanilla --process
 ```
 
-Collect a fully patched,```10.6.8 Vanilla.dmg```, in ```./instadmg/OutputFiles```.
+Collect a fully patched,```10.6.8 Vanilla.dmg```, in ```./Instadmg/OutputFiles```.
 Of course, there’s much more to it than that!
 
 Introduction - Where It Fits, What It Is
@@ -33,17 +33,17 @@ Before we move forward, let’s walk through the quickstart ```InstaDMG``` usage
 
 Ride the Bullet Build Train
 ```
-git clone  https://github.com/startergo/InstaDMG.git instadmg
+git clone  https://github.com/startergo/InstaDMG.git Instadmg
 ```
 This uses git. It pulls down the most recent version of the instadmg project into a newly-created folder called ```instadmg``` - it ﬁnishes in a matter of seconds (similar to Figure A, above), producing many lines of output and creating a very speciﬁc directory structure (Figure B, below) in your home folder.
 ```
-sudo ./instadmg/AddOns/InstaUp2Date/importDisk.py --automatic --legacy
+sudo ./Instadmg/AddOns/InstaUp2Date/importDisk.py --automatic --legacy
 ```
 After prompting you for your (currently-logged-in admin) password, this prepares the inserted installer disk (DVD) by creating a dmg of it and placing that in the ```./instadmg/InstallerFiles/``` ```BaseOS``` folder. The ```automatic``` option makes it skip prompting you for which disk you’d like to import, since we’re assuming there is only one installer disk mounted, and places it in a ```legacy``` location. Expect this step to take around 45 minutes or so.
 
 NEW IN LION: The above step isn’t necessary or applicable since ```10.7```, since ```Lion``` installer media is nested inside of ```Install Mac OS X Lion.app``` which can be downloaded from the Mac App Store. It is called ```InstallESD.dmg```, and can be found by right-clicking on the app, choosing Show Package Contents, and navigating to the ```Contents/Shared Support``` folder.
 ```
-sudo ./instadmg/AddOns/InstaUp2Date/instaUp2Date.py 10.6_vanilla --process
+sudo ./Instadmg/AddOns/InstaUp2Date/instaUp2Date.py 10.6_vanilla --process
 ```
 The important thing to notice is the ```--process``` option, which triggers the transition from the ```instaUp2Date``` functionality (which pulls down the updates speciﬁed in the ```10.6_vanilla.catalog``` ﬁle,) to the running of our key player, the ```instadmg``` bash script. The end result (after over an hour, surely enough time to grab a beverage,) will be a ready-to-restore dmg in the ./instadmg/ OutputFiles folder.
 
@@ -52,10 +52,10 @@ It’s a cause of confusion that ```InstaUp2Date``` is a project developed in pa
 In our quickstart earlier, the ```InstaUp2Date``` python program takes its instructions from the ```10.6_vanilla``` catalog ﬁle, and then proceeds to download the updates listed and place them in a cache folder. Checking that you received the updates you wanted “as advertised” (i.e. not corrupted or altered) is done by verifying the sha1 checksum, included in the catalog ﬁle.
 Symbolic links (a.k.a. aliases or shortcuts, loosely speaking) are created to point from where ```InstaDMG``` would expect packages in the directory structure to where the ﬁles that have been cached. ```InstaDMG``` is then started up, via being called by the ```--process``` ﬂag, at which point ```instaup2date.py’s``` most visible function is complete.
 
-Check out ```./instadmg/AddOns/InstaUp2Date/Catalogs/sample.catalog``` and more comprehensive instructions can be found in the readme.
+Check out ```./Instadmg/AddOns/InstaUp2Date/Catalogs/sample.catalog``` and more comprehensive instructions can be found in the readme.
 
 Procedurals
-If we’re not utilizing ```InstaUp2Date``` to take care of the moving around of packages, we need to sort them ourselves. Adding packages (or mpkgs) to our image after the OS is installed, and making sure ```iLife``` gets installed before its updates are applied, means we need to get a handle on what order things are installed in. Even though many of these packages will be updates we get from Apple, it’s a good idea to separate out the ones that deal with the core functionality of the OS (in ```./instadmg/InstallerFiles/BaseUpdates```) and others, including software or peripheral-speciﬁc ones (which belong in ```./instadmg/InstallerFiles/CustomPKG```).
+If we’re not utilizing ```InstaUp2Date``` to take care of the moving around of packages, we need to sort them ourselves. Adding packages (or mpkgs) to our image after the OS is installed, and making sure ```iLife``` gets installed before its updates are applied, means we need to get a handle on what order things are installed in. Even though many of these packages will be updates we get from Apple, it’s a good idea to separate out the ones that deal with the core functionality of the OS (in ```./Instadmg/InstallerFiles/BaseUpdates```) and others, including software or peripheral-speciﬁc ones (which belong in ```./Instadmg/InstallerFiles/CustomPKG```).
 
 Manually running updates for the OS (or other products like ```iLife``` or ```Microsoft Ofﬁce```) with their native update software can make it easy to see exactly what order updates should be applied in. In the GUI you can check by going into System Preferences -> Software Update and looking under the Installed Updates tab. Once we’ve assembled the update packages, we place them in numbered folders (01, 02, etc.) with one package per folder to be speciﬁc about their ordering.
 On to the Good Stuff
@@ -78,11 +78,11 @@ the case of the retail OS install itself. Following the instructions in that for
 The particularly useful thing about learning how to take advantage of an answer ﬁle is that you can use the same process for other ```mpkg’s```, like ```Ofﬁce2008``` and ```iLife 09```, and then add the ```xml``` to the folder with the installer(this is all site licensed software we’re working with, of course.) Use the installer GUI as your guide, and give yourself a little background by looking at the full choicesXML for context, just in case the naming of the choices aren’t clear.
 
 Beneﬁts Out-Of-The-Box, and Added On
-In an effort to make builds happen faster on subsequent runs, the base image(after ```installerChoices``` are evaluated) gets cached in ```./instadmg/Caches/BaseOS```. ```InstaDMG``` will then look there from that point on, and subsequent runs skip that initial install step “for free”.
+In an effort to make builds happen faster on subsequent runs, the base image(after ```installerChoices``` are evaluated) gets cached in ```./Instadmg/Caches/BaseOS```. ```InstaDMG``` will then look there from that point on, and subsequent runs skip that initial install step “for free”.
 
 If you haven’t already, you should look into ```DeployStudio```, ```PSU Blast Image Conﬁg```, or even just ```asr``` at the command line to restore your image. The usual warnings apply, this will wipe a disk clean before laying down your image - although all these tools are free, caveat emptor. You’ll notice the restore process can be as fast as 3 minutes for a lean (< 6GB) image. Here’s a one-liner for ```asr``` to get you going:
 ```
-sudo asr restore --source ./instadmg/OutputFiles/11-11-01.dmg --target /Volumes/ Destination --erase --verbose --noprompt --noverify --buffers 1 --buffersize 32m --puppetstrings
+sudo asr restore --source ./Instadmg/OutputFiles/11-11-01.dmg --target /Volumes/ Destination --erase --verbose --noprompt --noverify --buffers 1 --buffersize 32m --puppetstrings
 ```
 
 Added-on shiny bits:
@@ -90,9 +90,9 @@ Included in the ```AddOns``` directory is a ```createUser``` package, which enab
 
 Revisiting ```InstaUp2Date```, we’ll touch on another helper ﬁle, ```checksum.py```. This allows us to refer to custom ```pkgs``` we’d like to add in catalog ﬁles in the correct format (its output should be formatted with tabs exactly as required). Every time the ‘ﬁngerprint’ or makeup of your package changes you will need to re-run this against your pkg and then update your catalog ﬁle accordingly. This is achieved with the following:
 ```
-/instadmg/AddOns/InstaUp2Date/checksum.py $PATH_TO_PKG
+/Instadmg/AddOns/InstaUp2Date/checksum.py $PATH_TO_PKG
 ```
-(Where ```$PATH_TO_PKG``` usually lives in ```/instadmg/InstallerFiles/InstaUp2DatePackages```)
+(Where ```$PATH_TO_PKG``` usually lives in ```/Instadmg/InstallerFiles/InstaUp2DatePackages```)
 
 Problems with certain installers? You can always just punt
 If getting your software to play well with ```InstaDMG``` (or deployment in general) isn’t working for you, there are packaging tools that can ‘capture’ (like a snapshot) the state of a machine before and after install so you can repackage the differences. There are varying levels of success and complexity with the tools out there so we won’t cover this topic in more depth, but a general recommendation is to run the software once before considering the capture stage complete.
@@ -100,9 +100,9 @@ If getting your software to play well with ```InstaDMG``` (or deployment in gene
 How to rev the engine
 Once we’ve got the workﬂow down, it’s all about optimization. Disk image creation is a heavy I/O process, so CPU and RAM don’t play as much of a factor (although only having 1GB RAM is painful in general). There is one step in the process that can be skipped, and other helpful ﬂags I’ll demonstrate below:
 ```
-sudo ./instadmg/instadmg.bash -f -t /Volumes/stripedRAID0 -o /Volumes/stripedRAID0 -m Dev_10-6-5 -n Restored
+sudo ./Instadmg/instadmg.bash -f -t /Volumes/stripedRAID0 -o /Volumes/stripedRAID0 -m Dev_10-6-5 -n Restored
 ```
-```F``` denotes “non-paranoid mode”, which will therefore skip the veriﬁcation of image checksums. The subsequent ﬂags have the effect of multiplying the ‘spindles’ doing the work; our ```InstaDMG``` directory structure can be housed on a separate disk for the sole purpose of reading the packages(these days that would be a SSD with its superior sequential reads nearly saturating the SATA bus) and another location designated by the T ﬂag(in this example a RAID0 volume), is utilized for both writing the intermediate image into its root directory(instead of the default ```/tmp``` of your currently booted volume), and putting the ﬁnal asr-ready output(```-o```, instead of ```./instadmg/OutputFiles/```).
+```F``` denotes “non-paranoid mode”, which will therefore skip the veriﬁcation of image checksums. The subsequent ﬂags have the effect of multiplying the ‘spindles’ doing the work; our ```InstaDMG``` directory structure can be housed on a separate disk for the sole purpose of reading the packages(these days that would be a SSD with its superior sequential reads nearly saturating the SATA bus) and another location designated by the T ﬂag(in this example a RAID0 volume), is utilized for both writing the intermediate image into its root directory(instead of the default ```/tmp``` of your currently booted volume), and putting the ﬁnal asr-ready output(```-o```, instead of ```./Instadmg/OutputFiles/```).
 The ```M``` and ```N``` ﬂags are convenient ways to help you tell your images apart by setting what you want the resulting asr image to be named, both before restoration(```-m```, which would result in ```Dev_10-6-5.dmg``` instead of the default naming“11-11-1.dmg” for November 1st, 2011) and after(```-n```, so the resulting partition name would be ```Restored``` instead of the default ```InstaDMG```.)
 
 These are scripts you can open and look at, so feel free to read through all the options, or pass the ```--help``` ﬂag to it. And please post on the forum at ```afp548.com``` with questions!
