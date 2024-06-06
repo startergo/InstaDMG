@@ -15,7 +15,7 @@ sudo ./instadmg/AddOns/InstaUp2Date/importDisk.py --automatic --legacy
 ```
 Let it process for about 45 minutes, and ﬁnally:
 ```
-sudo ./instadmg/AddOns/InstaUp2Date/instaUp2Date.py 10.6_vanilla --process
+sudo ./Instadmg/AddOns/InstaUp2Date/instaUp2Date.py 10.6_vanilla --process
 ```
 
 Collect a fully patched,```10.6.8 Vanilla.dmg```, in ```./instadmg/OutputFiles```.
