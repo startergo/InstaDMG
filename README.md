@@ -82,7 +82,7 @@ In an effort to make builds happen faster on subsequent runs, the base image(aft
 
 If you haven’t already, you should look into ```DeployStudio```, ```PSU Blast Image Conﬁg```, or even just ```asr``` at the command line to restore your image. The usual warnings apply, this will wipe a disk clean before laying down your image - although all these tools are free, caveat emptor. You’ll notice the restore process can be as fast as 3 minutes for a lean (< 6GB) image. Here’s a one-liner for ```asr``` to get you going:
 ```
-sudo asr restore --source ./Instadmg/OutputFiles/11-11-01.dmg --target /Volumes/ Destination --erase --verbose --noprompt --noverify --buffers 1 --buffersize 32m --puppetstrings
+sudo asr restore --source /Instadmg/OutputFiles/11-11-01.dmg --target /Volumes/<Destination> --erase --verbose --noprompt --noverify --buffers 1 --buffersize 32m --puppetstrings
 ```
 
 Added-on shiny bits:
